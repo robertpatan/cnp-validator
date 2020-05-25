@@ -4,7 +4,6 @@ namespace Src;
 
 class CnpValidator
 {
-    
     private Cnp $cnp;
     
     public function __construct(string $cnp)
@@ -48,7 +47,6 @@ class CnpValidator
         $year = $this->cnp->getBirthYear();
         
         return 1800 <= $year && $year <= date('Y');
-        
     }
     
     /**
@@ -96,6 +94,4 @@ class CnpValidator
         
         return $checkSum === $calculatedCheckSum;
     }
-    
-    
 }

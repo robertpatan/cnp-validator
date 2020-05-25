@@ -2,7 +2,6 @@
 
 namespace Src\Contract;
 
-
 interface ICnp
 {
     public function getGenderNumber();
@@ -12,5 +11,7 @@ interface ICnp
     public function getLocationNumber();
     public function getSerialNumber();
     public function getCheckSumNumber();
-    
+    public function getBirthYear();
+    public function getBirthMonth();
+    public function getBirthDay();
 }

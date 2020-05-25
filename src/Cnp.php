@@ -9,8 +9,6 @@ class Cnp implements ICnp
 {
     private const MATCH_REGEX = '/^([1-9]{1})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{3})([0-9]{1})/';
     private const CONTROL_CHECKSUM_NUMBERS = [2, 7, 9, 1, 4, 6, 3, 5, 8, 2, 7, 9];
-    //    private const MALE_GENDER_NUMBERS = [1, 3, 5, 7];
-    //    private const FEMALE_GENDER_NUMBER = [2, 4, 6, 8];
     
     private stdClass $cnp;
     
@@ -40,7 +38,7 @@ class Cnp implements ICnp
         //remove the first match which is the whole string
         array_shift($matches);
         
-        if(!$matches && count($matches) !== 7 ) {
+        if (!$matches && count($matches) !== 7) {
             throw new \Exception('Invalid CNP');
         }
         
@@ -183,7 +181,7 @@ class Cnp implements ICnp
         $digits = array_slice($digits, 0, count($digits) - 1);
         $sum = array_sum(
             array_map(
-                fn($digit, $position) => (int) $digit * self::CONTROL_CHECKSUM_NUMBERS[$position],
+                fn ($digit, $position) => (int) $digit * self::CONTROL_CHECKSUM_NUMBERS[$position],
                 $digits,
                 array_keys($digits)
             )
@@ -199,6 +197,6 @@ class Cnp implements ICnp
      */
     protected function convertToIntArray(string $cnp): array
     {
-        return array_map(fn($digit) => (int) $digit, str_split($cnp, 1));
+        return array_map(fn ($digit) => (int) $digit, str_split($cnp, 1));
     }
 }
