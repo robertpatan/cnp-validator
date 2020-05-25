@@ -1,6 +1,6 @@
 {
     "name": "robertpatan/php-cnp-validator",
-    "description": "Validates Romanian personal identification number",
+    "description": "Romania Personal Identification Number(in Romanian CNP) validator",
     "type": "library",
     "license": "MIT",
     "authors": [
