@@ -16,6 +16,9 @@
     "require-dev": {
         "phpunit/phpunit": "^8"
     },
+    "autoload": {
+        "psr-4": {"Src\\": "src/"}
+    },
     "scripts": {
         "fix-php": [
             "php-cs-fixer fix \"$(pwd | awk '{print $1\"/src/\"}')\" --rules=@PSR2 --verbose"
